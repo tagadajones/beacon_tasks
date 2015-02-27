@@ -30,4 +30,9 @@ def decrypt(text):
 		else:			t.append(l)								#else: append punctuation
 	return  ''.join(t)
 
-print eval(sys.argv[1])(sys.argv[2])
+try:
+	print eval(sys.argv[1])(sys.argv[2])
+except NameError:
+	print 'Unknown function. Try with encrypt or decrypt functions'
+except IndexError:
+	print 'Wrong number of arguments'
