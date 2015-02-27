@@ -17,3 +17,14 @@ def encrypt(text):
 		if l in plain:	t.append(encrypted[plain.index(l)])		#encrypt letter if it's not punctuation 
 		else:			t.append(l)								#else: append punctuation
 	return  ''.join(t)
+
+def decrypt(text):
+	"""Caesar cipher decrypting
+	text : encrypted text to decrypt
+	returns : decrypted text
+	"""
+	t = []
+	for l in text.upper():
+		if l in plain:	t.append(plain[encrypted.index(l)])		#decrypt letter if it's not punctuation 
+		else:			t.append(l)								#else: append punctuation
+	return  ''.join(t)
