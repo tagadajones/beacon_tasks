@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 #Task 1 : Caesar Cipher
 
+import sys
 from string import ascii_uppercase
 
 #encrypted and uncrypted characters
@@ -28,3 +29,5 @@ def decrypt(text):
 		if l in plain:	t.append(plain[encrypted.index(l)])		#decrypt letter if it's not punctuation 
 		else:			t.append(l)								#else: append punctuation
 	return  ''.join(t)
+
+print eval(sys.argv[1])(sys.argv[2])
