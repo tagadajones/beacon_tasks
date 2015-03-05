@@ -17,9 +17,9 @@
 						url: "http://beaconinside-crypto.appspot.com/caesar/encrypt",
 						data: "message="+txt,
 						type: "GET",
-						dataType: "jsonp",
+						dataType: "html",
 						success: function(data, textStatus, jqXHR) {
-							$("textarea#processedArea").val($(data.responseText).text());
+							$("textarea#processedArea").val(data.split('"')[1]);
 						},
 						error: function(jqXHR, textStatus, errorThrown){
 							alert(jqXHR+ " "+ textStatus+ " "+ errorThrown);
@@ -27,11 +27,19 @@
 					})
 				}
 				if (choice == "Decrypt"){
-					alert(choice);
-					$.get("https://beaconinside-crypto.appspot.com/caesar/decrypt?message="+txt, function(data){
-						alert("Data: " + data);
+					$.ajax({
+						url: "http://beaconinside-crypto.appspot.com/caesar/decrypt",
+						data: "message="+txt,
+						type: "GET",
+						dataType: "html",
+						success: function(data, textStatus, jqXHR) {
+							$("textarea#processedArea").val(data.split('"')[1]);
+						},
+						error: function(jqXHR, textStatus, errorThrown){
+							alert(jqXHR+ " "+ textStatus+ " "+ errorThrown);
+						}
 					});
-				}
+				};
 				return false; // prevent further bubbling of event
 			}
      </script>
