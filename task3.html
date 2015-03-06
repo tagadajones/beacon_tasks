@@ -30,9 +30,15 @@
 		}
 
 		function process() {
-			return true
+			var txt = $("textarea#txtAreaToProcess").val();
+			var choice = $(".form-control option:selected").val();
+			var data = choice+"_"+txt 	//formate the text for the server side
+			xml_http_post("task2_3.html", data, test_handle)
 		}
-
+		function test_handle(req) {
+			//get the response from the server & print it in the textarea
+			$("textarea#processedArea").val(req.responseText);
+		}
 
 
 	</script>

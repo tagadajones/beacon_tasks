@@ -39,7 +39,12 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
         """Handle the plain/encrypted text - return the encrypted/decrypted text"""
         length = int(self.headers.getheader('content-length'))        
         data = self.rfile.read(length)
-        self.wfile.write(data)
+        way, txt = data.split('_')[0], data.split('_')[1]
+        try:
+            result = eval(way.lower())(txt)
+        except:
+            result = 'ERROR in the process'
+        self.wfile.write(result)
 
 def start_server():
     """Start the server."""
