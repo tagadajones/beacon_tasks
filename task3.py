@@ -2,7 +2,7 @@ import BaseHTTPServer
 import SimpleHTTPServer
 from string import ascii_uppercase
 
-FILE = 'task2.html'
+FILE = 'task3.html'
 PORT = 8080
 
 #encoded and decoded lists
