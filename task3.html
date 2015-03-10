@@ -45,42 +45,35 @@
 
 </head>
 <body>
-	<div class="col-sm-12" style="height:50px;">
+	<div class="col-md-12" style="height:50px;">
 	</div>
 	<div class="row">
-		<div class="col-sm-1">
-		<div id="result">
-		</div>
-		</div>
-		<div class="col-sm-4">
-
-			<form name="ciperForm" onSubmit="return process()" method="POST" role="form">
+		<div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-xs-10 col-md-10 col-md-4" style="border:1px solid white;">
+			<form name="cipherForm" onSubmit="return process()" method="POST" role="form">
 				<div class="form-group">
-					<label for="comment">Enter a text</label>
+					<label for="comment"><h3>Enter a text</h3></label>
 					<textarea class="form-control" rows="5" id="txtAreaToProcess" name="txtToProcess"></textarea>
 				</div>
-				<div class="col-sm-offset-5 col-sm-4" style="border:1px solid white;">
-					<select class="form-control" name="processChoice">
-						<option>Encrypt</option>
-						<option>Decrypt</option>
-					</select>
-				</div>
-				<div class="col-sm-3 form-actions" style="border:1px solid white;">
-					<button type=button onClick="process();" class="btn btn-success">Process</button>
-				</div>
+					<div class="row pull-right">
+						<div class="col-xs-7 col-sm-7 col-md-7" style="border:1px solid white;">
+							<select class="form-control pull-right" name="processChoice" style="width:110px!important;">
+								<option>Encrypt</option>
+								<option>Decrypt</option>
+							</select>
+						</div>
+						<div class="form-actions col-xs-5 col-sm-5 col-md-5" style="border:1px solid white; text-align:right">
+							<button type=button onClick="process();" class="btn btn-success">Process</button>
+						</div>
+					</div>
 			</form>
 
 		</div>
-		<div class="col-sm-2">
-		</div>
-		<div class="col-sm-4">
+		<div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-2 col-xs-10 col-md-10 col-md-4">
 				<div class="form-group">
-					<label for="comment">Processed text</label>
+					<label for="comment"><h3>Processed text</h3></label>
 					<textarea class="form-control" rows="5" id="processedArea"></textarea>
 					<br>
 				</div>
-		</div>
-		<div class="col-sm-1">
 		</div>
 	</div>
 </body>
